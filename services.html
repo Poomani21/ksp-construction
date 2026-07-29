@@ -70,7 +70,7 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="assets/img/favicon.ico.png"
+      href="assets/img/favicon.png"
     />
 
     <!-- CSS Files -->
@@ -258,132 +258,154 @@
       }
     }
 
-
     /* ---------- Our Clients Section ---------- */
-.our-clients-area {
-  background-color: #f8fafc;
-  overflow: hidden;
-}
+    .our-clients-area {
+      background-color: #f8fafc;
+      overflow: hidden;
+    }
 
-/* Section Header Fine-Tuning */
-.our-clients-area .section-tittle .sub-title {
-  color: #f26522;
-  font-size: 15px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  display: block;
-  margin-bottom: 8px;
-}
+    /* Section Header Fine-Tuning */
+    .our-clients-area .section-tittle .sub-title {
+      color: #f26522;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: block;
+      margin-bottom: 8px;
+    }
 
-.our-clients-area .section-tittle h2 {
-  color: #0b1c39;
-  font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 15px;
-}
+    .our-clients-area .section-tittle h2 {
+      color: #0b1c39;
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
 
-.our-clients-area .section-tittle .description-text {
-  color: #666666;
-  font-size: 15.5px;
-  line-height: 1.7;
-}
+    .our-clients-area .section-tittle .description-text {
+      color: #666666;
+      font-size: 15.5px;
+      line-height: 1.7;
+    }
 
-/* Marquee Container with Glass Fade Effect */
-.clients-marquee {
-  overflow: hidden;
-  position: relative;
-  padding: 25px 0;
-  background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 8px 25px rgba(11, 28, 57, 0.05);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
-}
+    /* Marquee Container with Glass Fade Effect */
+    .clients-marquee {
+      overflow: hidden;
+      position: relative;
+      padding: 25px 0;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 25px rgba(11, 28, 57, 0.05);
+      -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #000 10%,
+        #000 90%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        #000 10%,
+        #000 90%,
+        transparent 100%
+      );
+    }
 
-/* Continuous Sliding Track */
-.marquee-track {
-  display: flex;
-  gap: 32px;
-  width: max-content;
-  animation: marquee 28s linear infinite;
-  will-change: transform;
-}
+    /* Continuous Sliding Track */
+    .marquee-track {
+      display: flex;
+      gap: 32px;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+      will-change: transform;
+    }
 
-.clients-marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
+    .clients-marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
 
-/* Item Styling */
-.marquee-track span {
-  display: inline-flex;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: #0b1c39;
-  background-color: #f8fafc;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-}
+    /* Item Styling */
+    .marquee-track span {
+      display: inline-flex;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #0b1c39;
+      background-color: #f8fafc;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
 
-.marquee-track span i {
-  color: #f26522;
-  transition: color 0.3s ease;
-}
+    .marquee-track span i {
+      color: #f26522;
+      transition: color 0.3s ease;
+    }
 
-.marquee-track span:hover {
-  color: #ffffff;
-  background-color: #1b4fb8;
-  border-color: #1b4fb8;
-  transform: translateY(-2px);
-}
+    .marquee-track span:hover {
+      color: #ffffff;
+      background-color: #1b4fb8;
+      border-color: #1b4fb8;
+      transform: translateY(-2px);
+    }
 
-.marquee-track span:hover i {
-  color: #ffffff;
-}
+    .marquee-track span:hover i {
+      color: #ffffff;
+    }
 
-/* Continuous Marquee Animation Keyframes */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+    /* Continuous Marquee Animation Keyframes */
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
 
-/* Mobile Responsive Optimizations */
-@media (max-width: 768px) {
-  .our-clients-area .section-tittle h2 {
-    font-size: 24px;
-  }
-  
-  .our-clients-area .section-tittle .description-text {
-    font-size: 14px;
-  }
+    /* Mobile Responsive Optimizations */
+    @media (max-width: 768px) {
+      .our-clients-area .section-tittle h2 {
+        font-size: 24px;
+      }
 
-  .clients-marquee {
-    padding: 18px 0;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%);
-  }
+      .our-clients-area .section-tittle .description-text {
+        font-size: 14px;
+      }
 
-  .marquee-track {
-    gap: 16px;
-    animation-duration: 20s;
-  }
+      .clients-marquee {
+        padding: 18px 0;
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent 0%,
+          #000 5%,
+          #000 95%,
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          90deg,
+          transparent 0%,
+          #000 5%,
+          #000 95%,
+          transparent 100%
+        );
+      }
 
-  .marquee-track span {
-    font-size: 0.9rem;
-    padding: 8px 14px;
-  }
-}
+      .marquee-track {
+        gap: 16px;
+        animation-duration: 20s;
+      }
 
+      .marquee-track span {
+        font-size: 0.9rem;
+        padding: 8px 14px;
+      }
+    }
   </style>
 
   <body>
@@ -416,7 +438,7 @@
                         <i class="fas fa-envelope"></i
                         >kspconstruction25@gmail.com
                       </li>
-                      <li>Mon - Sat 9:00 AM - 06:30 PM, Sunday - CLOSED</li>
+                      <li>Mon - Sat 06:00 AM - 08:00 PM, Sunday - CLOSED</li>
                     </ul>
                   </div>
                   <div class="header-info-right">
@@ -465,9 +487,9 @@
                         <li><a href="project.html">Projects</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li>
-                          <a href="#">Gallerys</a>
+                          <a href="#">Gallery</a>
                           <ul class="submenu">
-                            <li><a href="gallery.html">Gallerys</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
                           </ul>
                         </li>
                         <li>
@@ -640,56 +662,96 @@
       <!-- Services Area End -->
 
       <!-- Our Clients Section Start -->
-<section class="our-clients-area section-padding bg-light" id="clients">
-  <div class="container">
-    
-    <!-- Section Title -->
-    <div class="row justify-content-center">
-      <div class="col-xl-8 col-lg-10">
-        <div class="section-tittle text-center mb-50">
-          <span class="sub-title">Our Clients</span>
-          <h2>Trusted by Government & Private Sectors</h2>
-          <p class="description-text">
-            KSP Construction proudly serves government departments, public sector
-            organizations, corporations, and private clients by delivering reliable
-            civil engineering and infrastructure solutions across Tamil Nadu.
-          </p>
-        </div>
-      </div>
-    </div>
+      <section class="our-clients-area section-padding bg-light" id="clients">
+        <div class="container">
+          <!-- Section Title -->
+          <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-10">
+              <div class="section-tittle text-center mb-50">
+                <span class="sub-title">Our Clients</span>
+                <h2>Trusted by Government & Private Sectors</h2>
+                <p class="description-text">
+                  KSP Construction proudly serves government departments, public
+                  sector organizations, corporations, and private clients by
+                  delivering reliable civil engineering and infrastructure
+                  solutions across Tamil Nadu.
+                </p>
+              </div>
+            </div>
+          </div>
 
-    <!-- Infinite Clients Marquee -->
-    <div class="row">
-      <div class="col-12">
-        <div class="clients-marquee">
-          <div class="marquee-track">
-            <span><i class="fa fa-university mr-2"></i>Tamil Nadu Government Projects</span>
-            <span><i class="fa fa-wrench mr-2"></i>PWD Works</span>
-            <span><i class="fa fa-road mr-2"></i>State Highways Projects</span>
-            <span><i class="fa fa-train mr-2"></i>Railway Infrastructure</span>
-            <span><i class="fa fa-building mr-2"></i>Corporation Projects</span>
-            <span><i class="fa fa-shield mr-2"></i>Public Infrastructure</span>
-            <span><i class="fa fa-industry mr-2"></i>Industrial Projects</span>
-            <span><i class="fa fa-home mr-2"></i>Residential & Commercial Projects</span>
+          <!-- Infinite Clients Marquee -->
+          <div class="row">
+            <div class="col-12">
+              <div class="clients-marquee">
+                <div class="marquee-track">
+                  <span
+                    ><i class="fa fa-university mr-2"></i>Tamil Nadu Government
+                    Projects</span
+                  >
+                  <span><i class="fa fa-wrench mr-2"></i>PWD Works</span>
+                  <span
+                    ><i class="fa fa-road mr-2"></i>State Highways
+                    Projects</span
+                  >
+                  <span
+                    ><i class="fa fa-train mr-2"></i>Railway
+                    Infrastructure</span
+                  >
+                  <span
+                    ><i class="fa fa-building mr-2"></i>Corporation
+                    Projects</span
+                  >
+                  <span
+                    ><i class="fa fa-shield mr-2"></i>Public
+                    Infrastructure</span
+                  >
+                  <span
+                    ><i class="fa fa-industry mr-2"></i>Industrial
+                    Projects</span
+                  >
+                  <span
+                    ><i class="fa fa-home mr-2"></i>Residential & Commercial
+                    Projects</span
+                  >
 
-            <!-- Duplicate items for seamless continuous loop -->
-            <span><i class="fa fa-university mr-2"></i>Tamil Nadu Government Projects</span>
-            <span><i class="fa fa-wrench mr-2"></i>PWD Works</span>
-            <span><i class="fa fa-road mr-2"></i>State Highways Projects</span>
-            <span><i class="fa fa-train mr-2"></i>Railway Infrastructure</span>
-            <span><i class="fa fa-building mr-2"></i>Corporation Projects</span>
-            <span><i class="fa fa-shield mr-2"></i>Public Infrastructure</span>
-            <span><i class="fa fa-industry mr-2"></i>Industrial Projects</span>
-            <span><i class="fa fa-home mr-2"></i>Residential & Commercial Projects</span>
+                  <!-- Duplicate items for seamless continuous loop -->
+                  <span
+                    ><i class="fa fa-university mr-2"></i>Tamil Nadu Government
+                    Projects</span
+                  >
+                  <span><i class="fa fa-wrench mr-2"></i>PWD Works</span>
+                  <span
+                    ><i class="fa fa-road mr-2"></i>State Highways
+                    Projects</span
+                  >
+                  <span
+                    ><i class="fa fa-train mr-2"></i>Railway
+                    Infrastructure</span
+                  >
+                  <span
+                    ><i class="fa fa-building mr-2"></i>Corporation
+                    Projects</span
+                  >
+                  <span
+                    ><i class="fa fa-shield mr-2"></i>Public
+                    Infrastructure</span
+                  >
+                  <span
+                    ><i class="fa fa-industry mr-2"></i>Industrial
+                    Projects</span
+                  >
+                  <span
+                    ><i class="fa fa-home mr-2"></i>Residential & Commercial
+                    Projects</span
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- Our Clients Section End -->
-
+      </section>
+      <!-- Our Clients Section End -->
     </main>
     <br />
     <footer>
