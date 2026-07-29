@@ -290,6 +290,83 @@
       width: 18px;
       text-align: center;
     }
+
+    /* ---------- Fullscreen Lightbox Overlay ---------- */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 85vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      transition: transform 0.2s ease;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 42px;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      z-index: 100000;
+    }
+
+    .lightbox-close:hover {
+      color: #ff7e00;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #ffffff;
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+      z-index: 100000;
+    }
+
+    .lightbox-nav:hover {
+      background: #ff7e00;
+      color: #ffffff;
+    }
+
+    .lightbox-nav.prev {
+      left: 25px;
+    }
+
+    .lightbox-nav.next {
+      right: 25px;
+    }
   </style>
   <body>
     <!-- Preloader Start -->
@@ -437,6 +514,7 @@
       <section class="project-area section-padding30">
         <div class="container">
           <!-- Section Title -->
+
           <div class="project-heading mb-50">
             <div class="row">
               <div class="col-lg-12">
@@ -457,19 +535,27 @@
           </div>
 
           <!-- Projects -->
+          <!-- Projects -->
           <div class="row">
             <!-- Project 1 -->
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-1.png"
-                    alt="Hot Mix Asphalt Production Plant at KSP Construction"
-                  />
+                  <a href="assets/img/gallery/image-1.png" class="gallery-item">
+                    <img
+                      src="assets/img/gallery/image-1.png"
+                      alt="Hot Mix Asphalt Production Plant at KSP Construction"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
                   <h4>
-                    <a href="#"> Hot Mix Asphalt Production </a>
+                    <a
+                      href="assets/img/gallery/image-1.png"
+                      class="gallery-item"
+                    >
+                      Hot Mix Asphalt Production
+                    </a>
                   </h4>
                   <p>
                     Advanced hot mix plant producing premium-quality asphalt
@@ -483,16 +569,22 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-3.png"
-                    alt="Modern Asphalt Plant Control Room at KSP Construction"
-                  />
+                  <a href="assets/img/gallery/image-3.png" class="gallery-item">
+                    <img
+                      src="assets/img/gallery/image-3.png"
+                      alt="Modern Asphalt Plant Control Room at KSP Construction"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
                   <h4>
-                    <a href="#"> Modern Plant Monitoring </a>
+                    <a
+                      href="assets/img/gallery/image-3.png"
+                      class="gallery-item"
+                    >
+                      Modern Plant Monitoring
+                    </a>
                   </h4>
-
                   <p>
                     Centralized control room ensuring production quality,
                     safety, and operational efficiency.
@@ -505,16 +597,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-4.jpeg"
-                    alt="Quality Engineering Inspection at Construction Site"
-                  />
+                  <a
+                    href="assets/img/gallery/image-4.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-4.jpeg"
+                      alt="Quality Engineering Inspection at Construction Site"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
                   <h4>
-                    <a href="#"> Quality & Engineering Inspection </a>
+                    <a
+                      href="assets/img/gallery/image-4.jpeg"
+                      class="gallery-item"
+                    >
+                      Quality & Engineering Inspection
+                    </a>
                   </h4>
-
                   <p>
                     Regular inspection by experienced engineers to maintain
                     superior construction quality.
@@ -527,13 +628,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-14.jpeg"
-                    alt="Bituminous Road Laying Work in Progress"
-                  />
+                  <a
+                    href="assets/img/gallery/image-14.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-14.jpeg"
+                      alt="Bituminous Road Laying Work in Progress"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#"> Bituminous Road Laying Works </a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-14.jpeg"
+                      class="gallery-item"
+                    >
+                      Bituminous Road Laying Works
+                    </a>
+                  </h4>
                   <p>
                     Professional bituminous road laying with premium asphalt for
                     long-lasting durability.
@@ -546,13 +659,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-10.jpeg"
-                    alt="Government Public Park Development Project"
-                  />
+                  <a
+                    href="assets/img/gallery/image-10.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-10.jpeg"
+                      alt="Government Public Park Development Project"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#"> Public Park Development </a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-10.jpeg"
+                      class="gallery-item"
+                    >
+                      Public Park Development
+                    </a>
+                  </h4>
                   <p>
                     Government park development with landscaping, pathways and
                     public amenities.
@@ -565,13 +690,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-5.jpeg"
-                    alt="Road Roller Compacting Asphalt Road Surface"
-                  />
+                  <a
+                    href="assets/img/gallery/image-5.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-5.jpeg"
+                      alt="Road Roller Compacting Asphalt Road Surface"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#"> Road Roller & Surface Finishing </a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-5.jpeg"
+                      class="gallery-item"
+                    >
+                      Road Roller & Surface Finishing
+                    </a>
+                  </h4>
                   <p>
                     Precision road compaction using advanced vibratory rollers
                     for durable pavements.
@@ -584,13 +721,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-28.jpeg"
-                    alt="Street Road Infrastructure Development at Suramangalam"
-                  />
+                  <a
+                    href="assets/img/gallery/image-28.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-28.jpeg"
+                      alt="Street Road Infrastructure Development at Suramangalam"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#"> Street Road Infrastructure </a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-28.jpeg"
+                      class="gallery-item"
+                    >
+                      Street Road Infrastructure
+                    </a>
+                  </h4>
                   <p>
                     Road surfacing and infrastructure development at Mullai
                     Nagar, Suramangalam.
@@ -603,13 +752,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-22.jpeg"
-                    alt="Residential Link Road Paving Project in Salem"
-                  />
+                  <a
+                    href="assets/img/gallery/image-22.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-22.jpeg"
+                      alt="Residential Link Road Paving Project in Salem"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Residential Link Road Paving</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-22.jpeg"
+                      class="gallery-item"
+                    >
+                      Residential Link Road Paving
+                    </a>
+                  </h4>
                   <p>
                     High-grade asphalt paving improving local neighborhood
                     connectivity.
@@ -622,13 +783,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-23.jpeg"
-                    alt="Asphalt Paving Machine Operating on Road Construction"
-                  />
+                  <a
+                    href="assets/img/gallery/image-23.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-23.jpeg"
+                      alt="Asphalt Paving Machine Operating on Road Construction"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a> Paving Machine Operations</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-23.jpeg"
+                      class="gallery-item"
+                    >
+                      Paving Machine Operations
+                    </a>
+                  </h4>
                   <p>
                     Modern asphalt pavers delivering uniform bituminous road
                     construction.
@@ -641,13 +814,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-24.jpeg"
-                    alt="Heavy Construction Machinery and Field Crew at Work"
-                  />
+                  <a
+                    href="assets/img/gallery/image-24.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-24.jpeg"
+                      alt="Heavy Construction Machinery and Field Crew at Work"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a>Machinery & Field Crew Execution</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-24.jpeg"
+                      class="gallery-item"
+                    >
+                      Machinery & Field Crew Execution
+                    </a>
+                  </h4>
                   <p>
                     Heavy machinery and skilled crews ensuring seamless road
                     construction.
@@ -660,13 +845,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-25.jpeg"
-                    alt="Sub-Base Aggregate Preparation for Road Construction"
-                  />
+                  <a
+                    href="assets/img/gallery/image-25.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-25.jpeg"
+                      alt="Sub-Base Aggregate Preparation for Road Construction"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a>Sub-Base Aggregate & Earthworks</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-25.jpeg"
+                      class="gallery-item"
+                    >
+                      Sub-Base Aggregate & Earthworks
+                    </a>
+                  </h4>
                   <p>
                     Ground leveling and crushed stone base preparation for
                     durable roads.
@@ -679,13 +876,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-27.jpeg"
-                    alt="Manual Aggregate Spreading and Road Base Levelling"
-                  />
+                  <a
+                    href="assets/img/gallery/image-27.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-27.jpeg"
+                      alt="Manual Aggregate Spreading and Road Base Levelling"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a>Manual Aggregate Spreading</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-27.jpeg"
+                      class="gallery-item"
+                    >
+                      Manual Aggregate Spreading
+                    </a>
+                  </h4>
                   <p>
                     Manual aggregate leveling and sub-grade preparation before
                     asphalt paving.
@@ -693,17 +902,30 @@
                 </div>
               </div>
             </div>
+
             <!-- Image 29: Concrete Retaining Wall / Culvert Abutment -->
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-29.jpeg"
-                    alt="Concrete Abutment and Culvert Structure Construction"
-                  />
+                  <a
+                    href="assets/img/gallery/image-29.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-29.jpeg"
+                      alt="Concrete Abutment and Culvert Structure Construction"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Concrete Culvert Structure</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-29.jpeg"
+                      class="gallery-item"
+                    >
+                      Concrete Culvert Structure
+                    </a>
+                  </h4>
                   <p>
                     Construction of heavy-duty reinforced concrete abutments and
                     retaining structures near Salem Railway Junction.
@@ -716,13 +938,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-30.jpeg"
-                    alt="Topographical Land Surveying and Site Preparation"
-                  />
+                  <a
+                    href="assets/img/gallery/image-30.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-30.jpeg"
+                      alt="Topographical Land Surveying and Site Preparation"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Site Survey & Leveling</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-30.jpeg"
+                      class="gallery-item"
+                    >
+                      Site Survey & Leveling
+                    </a>
+                  </h4>
                   <p>
                     Precision land surveying and topographical alignment for
                     major earthwork and infrastructure development.
@@ -735,13 +969,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-31.jpeg"
-                    alt="Reinforced Concrete Retaining Wall Steel Binding"
-                  />
+                  <a
+                    href="assets/img/gallery/image-31.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-31.jpeg"
+                      alt="Reinforced Concrete Retaining Wall Steel Binding"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Steel Rebar Reinforcement</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-31.jpeg"
+                      class="gallery-item"
+                    >
+                      Steel Rebar Reinforcement
+                    </a>
+                  </h4>
                   <p>
                     Detailed steel rebar fabrication and cage installation for
                     foundational earth retention walls.
@@ -754,13 +1000,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-32.jpeg"
-                    alt="Reinforced Concrete Slab Reinforcement Inspection"
-                  />
+                  <a
+                    href="assets/img/gallery/image-32.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-32.jpeg"
+                      alt="Reinforced Concrete Slab Reinforcement Inspection"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Slab Reinforcement Inspection</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-32.jpeg"
+                      class="gallery-item"
+                    >
+                      Slab Reinforcement Inspection
+                    </a>
+                  </h4>
                   <p>
                     On-site quality check and mesh reinforcement laying prior to
                     concrete pouring for culvert decking.
@@ -773,13 +1031,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-33.jpeg"
-                    alt="Roadway Sub-Base Preparation and Curb Construction"
-                  />
+                  <a
+                    href="assets/img/gallery/image-33.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-33.jpeg"
+                      alt="Roadway Sub-Base Preparation and Curb Construction"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Roadway Base & Curbing</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-33.jpeg"
+                      class="gallery-item"
+                    >
+                      Roadway Base & Curbing
+                    </a>
+                  </h4>
                   <p>
                     Subgrade compaction, concrete kerb edging installation, and
                     transit mixer operations along embankment roads.
@@ -792,13 +1062,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-34.jpeg"
-                    alt="Earthwork Levelling and Soil Embankment Compaction"
-                  />
+                  <a
+                    href="assets/img/gallery/image-34.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-34.jpeg"
+                      alt="Earthwork Levelling and Soil Embankment Compaction"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Embankment Formation</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-34.jpeg"
+                      class="gallery-item"
+                    >
+                      Embankment Formation
+                    </a>
+                  </h4>
                   <p>
                     Large-scale soil filling, leveling, and heavy roller
                     compaction for stable road embankments.
@@ -811,13 +1093,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-35.jpeg"
-                    alt="Granular Sub-Base Course Prep and Slope Landscaping"
-                  />
+                  <a
+                    href="assets/img/gallery/image-35.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-35.jpeg"
+                      alt="Granular Sub-Base Course Prep and Slope Landscaping"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Sub-Base Course Laying</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-35.jpeg"
+                      class="gallery-item"
+                    >
+                      Sub-Base Course Laying
+                    </a>
+                  </h4>
                   <p>
                     Granular sub-base preparation paired with side-slope grass
                     turfing for erosion control.
@@ -830,13 +1124,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-36.jpeg"
-                    alt="Interlocking Paver Block Pedestrian Walkway Installation"
-                  />
+                  <a
+                    href="assets/img/gallery/image-36.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-36.jpeg"
+                      alt="Interlocking Paver Block Pedestrian Walkway Installation"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Paver Block Walkway</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-36.jpeg"
+                      class="gallery-item"
+                    >
+                      Paver Block Walkway
+                    </a>
+                  </h4>
                   <p>
                     Laying durable interlocking concrete paver blocks for
                     pedestrian pathways along lakeside developments.
@@ -849,13 +1155,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-37.jpeg"
-                    alt="Excavator Operations for Lake Restoration and Bund Strengthening"
-                  />
+                  <a
+                    href="assets/img/gallery/image-37.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-37.jpeg"
+                      alt="Excavator Operations for Lake Restoration and Bund Strengthening"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Lake Restoration & Earthwork</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-37.jpeg"
+                      class="gallery-item"
+                    >
+                      Lake Restoration & Earthwork
+                    </a>
+                  </h4>
                   <p>
                     Heavy machinery excavation for lake deepening, bund
                     strengthening, and channel reshaping.
@@ -868,13 +1186,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-38.jpeg"
-                    alt="Completed Slope Landscape and Paver Track Infrastructure"
-                  />
+                  <a
+                    href="assets/img/gallery/image-38.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-38.jpeg"
+                      alt="Completed Slope Landscape and Paver Track Infrastructure"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Slope Protection & Greenery</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-38.jpeg"
+                      class="gallery-item"
+                    >
+                      Slope Protection & Greenery
+                    </a>
+                  </h4>
                   <p>
                     Finished geotextile turf slope protection, ornamental
                     planting, and paved access track integration.
@@ -887,13 +1217,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-39.jpeg"
-                    alt="Paver Block Roadway and Boundary Fencing Posts"
-                  />
+                  <a
+                    href="assets/img/gallery/image-39.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-39.jpeg"
+                      alt="Paver Block Roadway and Boundary Fencing Posts"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Paved Track & Fencing</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-39.jpeg"
+                      class="gallery-item"
+                    >
+                      Paved Track & Fencing
+                    </a>
+                  </h4>
                   <p>
                     Interlocking paver track installation along with protective
                     boundary post positioning near Salem Railway Junction.
@@ -906,13 +1248,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-40.jpeg"
-                    alt="Water Body Boundary and Unpaved Embankment Access Track"
-                  />
+                  <a
+                    href="assets/img/gallery/image-40.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-40.jpeg"
+                      alt="Water Body Boundary and Unpaved Embankment Access Track"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Lakeside Bund Access Track</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-40.jpeg"
+                      class="gallery-item"
+                    >
+                      Lakeside Bund Access Track
+                    </a>
+                  </h4>
                   <p>
                     Site clearance and earthen access track development
                     bordering the lake rejuvenation project area.
@@ -925,13 +1279,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-41.jpeg"
-                    alt="On-Site Structural Steel Truss Fabrication"
-                  />
+                  <a
+                    href="assets/img/gallery/image-41.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-41.jpeg"
+                      alt="On-Site Structural Steel Truss Fabrication"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Structural Steel Fabrication</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-41.jpeg"
+                      class="gallery-item"
+                    >
+                      Structural Steel Fabrication
+                    </a>
+                  </h4>
                   <p>
                     On-site welding and assembly of structural steel frames and
                     trusses for overhead shelter/gate structures.
@@ -944,13 +1310,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-42.jpeg"
-                    alt="Lakeside Embankment Alignment and Buffer Zone"
-                  />
+                  <a
+                    href="assets/img/gallery/image-42.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-42.jpeg"
+                      alt="Lakeside Embankment Alignment and Buffer Zone"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Lakeside Embankment Buffer</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-42.jpeg"
+                      class="gallery-item"
+                    >
+                      Lakeside Embankment Buffer
+                    </a>
+                  </h4>
                   <p>
                     Earthen bund formation and vegetation management along the
                     water body perimeter.
@@ -963,13 +1341,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-43.jpeg"
-                    alt="Restored Lake Reservoir and Plantation Embankment"
-                  />
+                  <a
+                    href="assets/img/gallery/image-43.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-43.jpeg"
+                      alt="Restored Lake Reservoir and Plantation Embankment"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Water Body Rejuvenation</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-43.jpeg"
+                      class="gallery-item"
+                    >
+                      Water Body Rejuvenation
+                    </a>
+                  </h4>
                   <p>
                     Eco-restoration of the water reservoir with reinforced
                     embankments and natural wetland vegetation buffers.
@@ -982,13 +1372,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-44.jpeg"
-                    alt="Freshly Laid Concrete Road and Landscaping Margins"
-                  />
+                  <a
+                    href="assets/img/gallery/image-44.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-44.jpeg"
+                      alt="Freshly Laid Concrete Road and Landscaping Margins"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Concrete Road Development</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-44.jpeg"
+                      class="gallery-item"
+                    >
+                      Concrete Road Development
+                    </a>
+                  </h4>
                   <p>
                     Laying smooth concrete pavement alongside tree-lined side
                     margins for public access pathways.
@@ -1001,13 +1403,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-45.jpeg"
-                    alt="Hydraulic Mobile Crane Erecting Steel Entrance Arch"
-                  />
+                  <a
+                    href="assets/img/gallery/image-45.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-45.jpeg"
+                      alt="Hydraulic Mobile Crane Erecting Steel Entrance Arch"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Entrance Arch Erection</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-45.jpeg"
+                      class="gallery-item"
+                    >
+                      Entrance Arch Erection
+                    </a>
+                  </h4>
                   <p>
                     Heavy hydraulic crane positioning and structural assembly of
                     the site entrance archway.
@@ -1020,13 +1434,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-46.jpeg"
-                    alt="Power Trowel Machine Polishing Concrete Road Surface"
-                  />
+                  <a
+                    href="assets/img/gallery/image-46.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-46.jpeg"
+                      alt="Power Trowel Machine Polishing Concrete Road Surface"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Concrete Power Floating</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-46.jpeg"
+                      class="gallery-item"
+                    >
+                      Concrete Power Floating
+                    </a>
+                  </h4>
                   <p>
                     Mechanical power trowel polishing for smooth surface
                     finishing on the newly constructed concrete walkway.
@@ -1039,13 +1465,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-47.jpeg"
-                    alt="Heavy Hydraulic Excavators Clearing Mud and Silting Bed"
-                  />
+                  <a
+                    href="assets/img/gallery/image-47.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-47.jpeg"
+                      alt="Heavy Hydraulic Excavators Clearing Mud and Silting Bed"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Lake Bed De-silting</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-47.jpeg"
+                      class="gallery-item"
+                    >
+                      Lake Bed De-silting
+                    </a>
+                  </h4>
                   <p>
                     Heavy excavator fleet operations for deep silt removal and
                     channel excavation at Bodinayakkanpatti.
@@ -1058,13 +1496,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-48.jpeg"
-                    alt="Concrete Retaining Wall along Excavated Earth Slope"
-                  />
+                  <a
+                    href="assets/img/gallery/image-48.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-48.jpeg"
+                      alt="Concrete Retaining Wall along Excavated Earth Slope"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Retaining Wall & Drainage</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-48.jpeg"
+                      class="gallery-item"
+                    >
+                      Retaining Wall & Drainage
+                    </a>
+                  </h4>
                   <p>
                     Excavation along steep earth cuts paired with low-level
                     concrete retaining wall construction for drainage
@@ -1073,17 +1523,30 @@
                 </div>
               </div>
             </div>
+
             <!-- Image 49: Landscaped Lawn Slope & Security Posts -->
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-49.jpeg"
-                    alt="Lakeside Slope Turfing and Perimeter Boundary Fencing"
-                  />
+                  <a
+                    href="assets/img/gallery/image-49.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-49.jpeg"
+                      alt="Lakeside Slope Turfing and Perimeter Boundary Fencing"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Lakeside Slope Turfing</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-49.jpeg"
+                      class="gallery-item"
+                    >
+                      Lakeside Slope Turfing
+                    </a>
+                  </h4>
                   <p>
                     Embankment slope stabilization featuring green turfing,
                     flowering plants, and concrete boundary posts.
@@ -1096,13 +1559,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-50.jpeg"
-                    alt="Road Roller Compacting Wet Mix Macadam Surface"
-                  />
+                  <a
+                    href="assets/img/gallery/image-50.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-50.jpeg"
+                      alt="Road Roller Compacting Wet Mix Macadam Surface"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Aggregate Base Compaction</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-50.jpeg"
+                      class="gallery-item"
+                    >
+                      Aggregate Base Compaction
+                    </a>
+                  </h4>
                   <p>
                     Vibratory roller compaction on aggregate sub-base track
                     flanked by concrete Kerbs and post markers.
@@ -1115,13 +1590,25 @@
             <div class="col-lg-4 col-md-6">
               <div class="single-project mb-30">
                 <div class="project-img">
-                  <img
-                    src="assets/img/gallery/image-51.jpeg"
-                    alt="Lake Basin Slope Earthworks and Water Retention Area"
-                  />
+                  <a
+                    href="assets/img/gallery/image-51.jpeg"
+                    class="gallery-item"
+                  >
+                    <img
+                      src="assets/img/gallery/image-51.jpeg"
+                      alt="Lake Basin Slope Earthworks and Water Retention Area"
+                    />
+                  </a>
                 </div>
                 <div class="project-cap">
-                  <h4><a href="#">Basin Slope Shaping</a></h4>
+                  <h4>
+                    <a
+                      href="assets/img/gallery/image-51.jpeg"
+                      class="gallery-item"
+                    >
+                      Basin Slope Shaping
+                    </a>
+                  </h4>
                   <p>
                     Precision slope trimming and earth grading along the lake
                     reservoir perimeter to maximize water retention.
@@ -1133,6 +1620,18 @@
         </div>
       </section>
       <!-- Project Area End -->
+
+      <!-- Lightbox Modal Markup -->
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-nav prev" aria-label="Previous">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+        <img class="lightbox-img" alt="Gallery View" src="" />
+        <button class="lightbox-nav next" aria-label="Next">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
     </main>
     <footer>
       <!-- Footer Start-->
@@ -1307,5 +1806,65 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <script>
+      // Lightbox Controller
+      function initLightbox() {
+        const lightbox = document.getElementById("lightbox");
+        if (!lightbox) return;
+
+        const lbImg = lightbox.querySelector(".lightbox-img");
+        const lbClose = lightbox.querySelector(".lightbox-close");
+        const lbPrev = lightbox.querySelector(".lightbox-nav.prev");
+        const lbNext = lightbox.querySelector(".lightbox-nav.next");
+        const items = document.querySelectorAll(".gallery-item");
+        let current = 0;
+
+        const open = (i) => {
+          current = i;
+          const a = items[current];
+          if (!a) return;
+
+          lbImg.src = a.getAttribute("href");
+          lbImg.alt = a.querySelector("img")?.alt || "";
+          lightbox.classList.add("open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        };
+
+        const close = () => {
+          lightbox.classList.remove("open");
+          lightbox.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        };
+
+        const step = (d) => open((current + d + items.length) % items.length);
+
+        items.forEach((a, i) => {
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            open(i);
+          });
+        });
+
+        if (lbClose) lbClose.onclick = close;
+        if (lbPrev) lbPrev.onclick = () => step(-1);
+        if (lbNext) lbNext.onclick = () => step(1);
+
+        lightbox.onclick = (e) => {
+          if (e.target === lightbox) close();
+        };
+
+        document.onkeydown = (e) => {
+          if (!lightbox.classList.contains("open")) return;
+          if (e.key === "Escape") close();
+          if (e.key === "ArrowRight") step(1);
+          if (e.key === "ArrowLeft") step(-1);
+        };
+      }
+
+      // Execute after DOM is fully loaded
+      document.addEventListener("DOMContentLoaded", initLightbox);
+    </script>
   </body>
 </html>
