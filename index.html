@@ -356,6 +356,84 @@
       width: 18px;
       text-align: center;
     }
+
+    /* ---------- Fullscreen Lightbox Overlay ---------- */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 85vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      transition: transform 0.2s ease;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 42px;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      z-index: 100000;
+    }
+
+    .lightbox-close:hover {
+      color: #ff7e00;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #ffffff;
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+      z-index: 100000;
+    }
+
+    .lightbox-nav:hover {
+      background: #ff7e00;
+      color: #ffffff;
+    }
+
+    .lightbox-nav.prev {
+      left: 25px;
+    }
+
+    .lightbox-nav.next {
+      right: 25px;
+    }
+
   </style>
 
   <body>
@@ -597,636 +675,651 @@
         </div>
       </section>
       <!-- About Area End -->
-      <!-- Project Area Start -->
-      <section class="project-area section-padding30">
-        <div class="container">
-          <div class="project-heading mb-35">
-            <div class="row align-items-end">
-              <div class="col-lg-6">
-                <!-- Section Tittle -->
-                <div class="section-tittle section-tittle3">
-                  <div class="front-text">
-                    <h2 class="">Our Projects</h2>
-                  </div>
-                  <span class="back-text">Gellary</span>
-                </div>
+       <!-- Project Area Start -->
+  <section class="project-area section-padding30">
+    <div class="container">
+      <div class="project-heading mb-35">
+        <div class="row align-items-end">
+          <div class="col-lg-6">
+            <!-- Section Title -->
+            <div class="section-tittle section-tittle3">
+              <div class="front-text">
+                <h2>Our Projects</h2>
               </div>
-              <div class="col-lg-6">
-                <div class="properties__button">
-                  <!--Nav Button  -->
-                  <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <a
-                        class="nav-item nav-link active"
-                        id="nav-home-tab"
-                        data-toggle="tab"
-                        href="#nav-home"
-                        role="tab"
-                        aria-controls="nav-home"
-                        aria-selected="false"
-                      >
-                        Show all
-                      </a>
-                      <a
-                        class="nav-item nav-link"
-                        id="nav-profile-tab"
-                        data-toggle="tab"
-                        href="#nav-profile"
-                        role="tab"
-                        aria-controls="nav-profile"
-                        aria-selected="false"
-                      >
-                        Roads</a
-                      >
-                      <a
-                        class="nav-item nav-link"
-                        id="nav-contact-tab"
-                        data-toggle="tab"
-                        href="#nav-contact"
-                        role="tab"
-                        aria-controls="nav-contact"
-                        aria-selected="false"
-                        >Sands</a
-                      >
-                      <a
-                        class="nav-item nav-link"
-                        id="nav-last-tab"
-                        data-toggle="tab"
-                        href="#nav-last"
-                        role="tab"
-                        aria-controls="nav-contact"
-                        aria-selected="false"
-                        >Buildings</a
-                      >
-                    </div>
-                  </nav>
-                  <!--End Nav Button  -->
-                </div>
-              </div>
+              <span class="back-text">Gallery</span>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <!-- Nav Card -->
-              <div class="tab-content active" id="nav-tabContent">
-                <!-- card ONE -->
-                <div
-                  class="tab-pane fade active show"
-                  id="nav-home"
-                  role="tabpanel"
-                  aria-labelledby="nav-home-tab"
-                >
-                  <div class="project-caption">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-14.jpeg"
-                              alt="Road Construction"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Bituminous Road Laying</a
-                              >
-                            </h4>
-                            <h4><a href="project_details.html">Works</a></h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-10.jpeg"
-                              alt="Government Project"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Public Park Development
-                              </a>
-                            </h4>
-                            <h4><a href="project_details.html">Project</a></h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-5.jpeg"
-                              alt="Road Compaction"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Road Roller & Surface</a
-                              >
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Finishing</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-28.jpeg"
-                              alt="Residential Infrastructure"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html">Street Road</a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Infrastructure</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-22.jpeg"
-                              alt="Urban Connectivity"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Residential Link Road</a
-                              >
-                            </h4>
-                            <h4><a href="project_details.html">Paving</a></h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-23.jpeg"
-                              alt="Paving Operations"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Asphalt Paving Machine</a
-                              >
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Operations</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <div class="col-lg-6">
+            <div class="properties__button">
+              <!-- Nav Button -->
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a
+                    class="nav-item nav-link active"
+                    id="nav-home-tab"
+                    data-toggle="tab"
+                    href="#nav-home"
+                    role="tab"
+                    aria-controls="nav-home"
+                    aria-selected="true"
+                  >
+                    Show all
+                  </a>
+                  <a
+                    class="nav-item nav-link"
+                    id="nav-profile-tab"
+                    data-toggle="tab"
+                    href="#nav-profile"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    Roads
+                  </a>
+                  <a
+                    class="nav-item nav-link"
+                    id="nav-contact-tab"
+                    data-toggle="tab"
+                    href="#nav-contact"
+                    role="tab"
+                    aria-controls="nav-contact"
+                    aria-selected="false"
+                  >
+                    Sands
+                  </a>
+                  <a
+                    class="nav-item nav-link"
+                    id="nav-last-tab"
+                    data-toggle="tab"
+                    href="#nav-last"
+                    role="tab"
+                    aria-controls="nav-last"
+                    aria-selected="false"
+                  >
+                    Buildings
+                  </a>
                 </div>
-                <!-- Card TWO -->
-                <div
-                  class="tab-pane fade"
-                  id="nav-profile"
-                  role="tabpanel"
-                  aria-labelledby="nav-profile-tab"
-                >
-                  <div class="project-caption">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-5.jpeg"
-                              alt="Road Compaction"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Road Roller & Surface</a
-                              >
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Finishing</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-18.jpeg"
-                              alt="Highway Road"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html">Highway Road</a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Infrastructure</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-22.jpeg"
-                              alt="Bituminous Road Laying Works"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Bituminous Road Laying
-                              </a>
-                            </h4>
-                            <h4><a href="project_details.html">Works</a></h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-23.jpeg"
-                              alt="Paving Operations"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Asphalt Paving Machine
-                              </a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Operations</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-9.jpeg"
-                              alt="Road Works"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html">Village Road</a>
-                            </h4>
-                            <h4><a href="project_details.html">Works</a></h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-24.jpeg"
-                              alt="On-Site Execution"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Machinery & Field Crew
-                              </a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Execution</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card THREE -->
-                <div
-                  class="tab-pane fade"
-                  id="nav-contact"
-                  role="tabpanel"
-                  aria-labelledby="nav-contact-tab"
-                >
-                  <div class="project-caption">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-3.png"
-                              alt="Asphalt Plant"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html">Hot Mix Asphalt</a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Production</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-8.jpeg"
-                              alt="Base Preparation"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Sub-Base Aggregate &
-                              </a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Earthworks</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-25.jpeg"
-                              alt="Manual Laying"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Manual Aggregate</a
-                              >
-                            </h4>
-                            <h4>
-                              <a href="project_details.html"
-                                >Spreading & Levelling</a
-                              >
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-16.jpeg"
-                              alt="Road Construction"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Bituminous Road Laying</a
-                              >
-                            </h4>
-                            <h4><a href="project_details.html">Works</a></h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-20.jpeg"
-                              alt="On-Site Execution"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Machinery & Field Crew
-                              </a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Execution</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-13.jpeg"
-                              alt="Road Construction"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Road Construction</a
-                              >
-                            </h4>
-                            <h4><a href="project_details.html">Works</a></h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- card FUR -->
-                <div
-                  class="tab-pane fade"
-                  id="nav-last"
-                  role="tabpanel"
-                  aria-labelledby="nav-last-tab"
-                >
-                  <div class="project-caption">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-10.jpeg"
-                              alt="Government Project"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Public Park Development
-                              </a>
-                            </h4>
-                            <h4><a href="project_details.html">Project</a></h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-15.jpeg"
-                              alt="Base Preparation"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Sub-Base Aggregate
-                              </a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">& Earthworks</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-19.jpeg"
-                              alt="Road Compaction"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html">Road Roller & </a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html"
-                                >Surface Finishing</a
-                              >
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-11.jpeg"
-                              alt="Site Inspection"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html">Site Inspection</a>
-                            </h4>
-                            <h4><a href="project_details.html">Works</a></h4>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6">
-                        <div class="single-project mb-30">
-                          <div class="project-img">
-                            <img
-                              src="assets/img/gallery/image-6.png"
-                              alt="Site Inspection"
-                            />
-                          </div>
-                          <div class="project-cap">
-                            <a href="project_details.html" class="plus-btn"
-                              ><i class="ti-plus"></i
-                            ></a>
-                            <h4>
-                              <a href="project_details.html"
-                                >Quality & Engineering
-                              </a>
-                            </h4>
-                            <h4>
-                              <a href="project_details.html">Inspection</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Nav Card -->
+              </nav>
+              <!-- End Nav Button -->
             </div>
           </div>
         </div>
-      </section>
-      <!-- Project Area End -->
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <!-- Nav Card -->
+          <div class="tab-content active" id="nav-tabContent">
+            <!-- card ONE -->
+            <div
+              class="tab-pane fade active show"
+              id="nav-home"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+            >
+              <div class="project-caption">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-14.jpeg"
+                          alt="Road Construction"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-14.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Bituminous Road Laying</a
+                          >
+                        </h4>
+                        <h4><a href="project.html">Works</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-10.jpeg"
+                          alt="Government Project"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-10.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Public Park Development
+                          </a>
+                        </h4>
+                        <h4><a href="project.html">Project</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-5.jpeg"
+                          alt="Road Compaction"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-5.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Road Roller & Surface</a
+                          >
+                        </h4>
+                        <h4>
+                          <a href="project.html">Finishing</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-28.jpeg"
+                          alt="Residential Infrastructure"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-28.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html">Street Road</a>
+                        </h4>
+                        <h4>
+                          <a href="project.html">Infrastructure</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-22.jpeg"
+                          alt="Urban Connectivity"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-22.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Residential Link Road</a
+                          >
+                        </h4>
+                        <h4><a href="project.html">Paving</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-23.jpeg"
+                          alt="Paving Operations"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-23.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Asphalt Paving Machine</a
+                          >
+                        </h4>
+                        <h4>
+                          <a href="project.html">Operations</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card TWO -->
+            <div
+              class="tab-pane fade"
+              id="nav-profile"
+              role="tabpanel"
+              aria-labelledby="nav-profile-tab"
+            >
+              <div class="project-caption">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-5.jpeg"
+                          alt="Road Compaction"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-5.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Road Roller & Surface</a
+                          >
+                        </h4>
+                        <h4>
+                          <a href="project.html">Finishing</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-18.jpeg"
+                          alt="Highway Road"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-18.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html">Highway Road</a>
+                        </h4>
+                        <h4>
+                          <a href="project.html">Infrastructure</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-22.jpeg"
+                          alt="Bituminous Road Laying Works"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-22.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Bituminous Road Laying
+                          </a>
+                        </h4>
+                        <h4><a href="project.html">Works</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-23.jpeg"
+                          alt="Paving Operations"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-23.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Asphalt Paving Machine
+                          </a>
+                        </h4>
+                        <h4>
+                          <a href="project.html">Operations</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-9.jpeg"
+                          alt="Road Works"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-9.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html">Village Road</a>
+                        </h4>
+                        <h4><a href="project.html">Works</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-24.jpeg"
+                          alt="On-Site Execution"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-24.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Machinery & Field Crew
+                          </a>
+                        </h4>
+                        <h4>
+                          <a href="project.html">Execution</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card THREE -->
+            <div
+              class="tab-pane fade"
+              id="nav-contact"
+              role="tabpanel"
+              aria-labelledby="nav-contact-tab"
+            >
+              <div class="project-caption">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-3.png"
+                          alt="Asphalt Plant"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-3.png" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html">Hot Mix Asphalt</a>
+                        </h4>
+                        <h4>
+                          <a href="project.html">Production</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-8.jpeg"
+                          alt="Base Preparation"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-8.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Sub-Base Aggregate &
+                          </a>
+                        </h4>
+                        <h4>
+                          <a href="project.html">Earthworks</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-25.jpeg"
+                          alt="Manual Laying"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-25.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Manual Aggregate</a
+                          >
+                        </h4>
+                        <h4>
+                          <a href="project.html"
+                            >Spreading & Levelling</a
+                          >
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-16.jpeg"
+                          alt="Road Construction"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-16.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Bituminous Road Laying</a
+                          >
+                        </h4>
+                        <h4><a href="project.html">Works</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-20.jpeg"
+                          alt="On-Site Execution"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-20.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Machinery & Field Crew
+                          </a>
+                        </h4>
+                        <h4>
+                          <a href="project.html">Execution</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-13.jpeg"
+                          alt="Road Construction"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-13.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Road Construction</a
+                          >
+                        </h4>
+                        <h4><a href="project.html">Works</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- card FOUR -->
+            <div
+              class="tab-pane fade"
+              id="nav-last"
+              role="tabpanel"
+              aria-labelledby="nav-last-tab"
+            >
+              <div class="project-caption">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-10.jpeg"
+                          alt="Government Project"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-10.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Public Park Development
+                          </a>
+                        </h4>
+                        <h4><a href="project.html">Project</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-15.jpeg"
+                          alt="Base Preparation"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-15.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Sub-Base Aggregate
+                          </a>
+                        </h4>
+                        <h4>
+                          <a href="project.html">& Earthworks</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-19.jpeg"
+                          alt="Road Compaction"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-19.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html">Road Roller & </a>
+                        </h4>
+                        <h4>
+                          <a href="project.html"
+                            >Surface Finishing</a
+                          >
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-11.jpeg"
+                          alt="Site Inspection"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-11.jpeg" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html">Site Inspection</a>
+                        </h4>
+                        <h4><a href="project.html">Works</a></h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="single-project mb-30">
+                      <div class="project-img">
+                        <img
+                          src="assets/img/gallery/image-6.png"
+                          alt="Site Inspection"
+                        />
+                      </div>
+                      <div class="project-cap">
+                        <a href="assets/img/gallery/image-6.png" class="plus-btn gallery-item"
+                          ><i class="ti-plus"></i
+                        ></a>
+                        <h4>
+                          <a href="project.html"
+                            >Quality & Engineering
+                          </a>
+                        </h4>
+                        <h4>
+                          <a href="project.html">Inspection</a>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Nav Card -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Project Area End -->
+
+        <!-- Lightbox Modal Markup -->
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-nav prev" aria-label="Previous">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+        <img class="lightbox-img" alt="Gallery View" src="" />
+        <button class="lightbox-nav next" aria-label="Next">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+
       <!-- contact with us Start -->
       <section
         class="contact-with-area"
@@ -1734,5 +1827,83 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+
+    <script>
+    // Lightbox Controller
+    function initLightbox() {
+      const lightbox = document.getElementById("lightbox");
+      if (!lightbox) return;
+
+      const lbImg = lightbox.querySelector(".lightbox-img");
+      const lbClose = lightbox.querySelector(".lightbox-close");
+      const lbPrev = lightbox.querySelector(".lightbox-nav.prev");
+      const lbNext = lightbox.querySelector(".lightbox-nav.next");
+      
+      let items = [];
+      let current = 0;
+
+      // Dynamically fetch items based on current active tab
+      const getActiveItems = () => {
+        const activeTab = document.querySelector(".tab-pane.active");
+        return activeTab ? Array.from(activeTab.querySelectorAll(".gallery-item")) : Array.from(document.querySelectorAll(".gallery-item"));
+      };
+
+      const open = (i) => {
+        items = getActiveItems();
+        current = i;
+        const a = items[current];
+        if (!a) return;
+
+        lbImg.src = a.getAttribute("href");
+        lbImg.alt = a.closest(".single-project")?.querySelector(".project-img img")?.alt || "Gallery View";
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      };
+
+      const close = () => {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      };
+
+      const step = (d) => {
+        items = getActiveItems();
+        if (items.length === 0) return;
+        current = (current + d + items.length) % items.length;
+        open(current);
+      };
+
+      // Event Delegation for clicking plus buttons dynamically
+      document.addEventListener("click", (e) => {
+        const target = e.target.closest(".gallery-item");
+        if (target) {
+          e.preventDefault();
+          items = getActiveItems();
+          const index = items.indexOf(target);
+          open(index !== -1 ? index : 0);
+        }
+      });
+
+      if (lbClose) lbClose.onclick = close;
+      if (lbPrev) lbPrev.onclick = () => step(-1);
+      if (lbNext) lbNext.onclick = () => step(1);
+
+      lightbox.onclick = (e) => {
+        if (e.target === lightbox) close();
+      };
+
+      document.onkeydown = (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (e.key === "Escape") close();
+        if (e.key === "ArrowRight") step(1);
+        if (e.key === "ArrowLeft") step(-1);
+      };
+    }
+
+    // Execute after DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", initLightbox);
+  </script>
+
   </body>
 </html>
