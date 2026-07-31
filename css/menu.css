@@ -1,0 +1,34 @@
+
+    /* =========================================
+   ACTIVE MENU STATE (DESKTOP & MOBILE)
+========================================= */
+
+/* Desktop Active Link Styling */
+#navigation > li.active > a,
+#navigation li .submenu li.active > a {
+  color: #ff7e00 !important;
+  font-weight: 700;
+}
+
+/* Mobile Menu Active Link Styling (SlickNav / MeanMenu) */
+.slicknav_nav li.active > a,
+.slicknav_nav li.active > a span,
+.mean-container .mean-nav ul li.active > a {
+  color: #ff7e00 !important;
+  font-weight: 700 !important;
+}
+
+/* Optional: Accent bar or indicator for active top-level item on desktop */
+#navigation > li.active > a {
+  position: relative;
+}
+
+#navigation > li.active > a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff7e00;
+}

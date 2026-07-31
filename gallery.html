@@ -85,6 +85,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <script src="js/menu.js"></script>
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -337,6 +339,89 @@
       width: 18px;
       text-align: center;
     }
+
+    /* ===================================================
+   MOBILE RESPONSIVE: PAGINATION & LIGHTBOX OVERLAY
+=================================================== */
+
+/* ---------- Mobile Pagination Adjustments ---------- */
+@media (max-width: 767px) {
+  /* Flex wrapping and centering for pagination container */
+  .blog-pagination .pagination {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 6px !important; /* Space out page buttons evenly */
+    padding: 0 !important;
+    margin-top: 20px !important;
+  }
+
+  /* Compact button styling for smaller screens */
+  .blog-pagination .pagination .page-item {
+    margin: 0 !important;
+  }
+
+  .blog-pagination .pagination .page-link {
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    border-radius: 4px !important;
+  }
+
+  /* Disabled state fix for previous/next arrows */
+  .blog-pagination .pagination .page-item.disabled .page-link {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+/* ---------- Mobile Lightbox Adjustments ---------- */
+@media (max-width: 767px) {
+  .lightbox {
+    padding: 10px;
+  }
+
+  /* Prevent image from overflowing small viewports */
+  .lightbox-img {
+    max-width: 92vw !important;
+    max-height: 70vh !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Scaled-down close button */
+  .lightbox-close {
+    top: 15px !important;
+    right: 15px !important;
+    font-size: 32px !important;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Smaller navigation buttons pulled closer to edges */
+  .lightbox-nav {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 18px !important;
+    background: rgba(0, 0, 0, 0.5) !important; /* Darker background for visibility */
+  }
+
+  .lightbox-nav.prev {
+    left: 10px !important;
+  }
+
+  .lightbox-nav.next {
+    right: 10px !important;
+  }
+}
+
+
   </style>
 
   <body>
