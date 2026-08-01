@@ -1,17 +1,17 @@
-$(document).ready(function() {
-    (function($) {
+$(document).ready(function () {
+    (function ($) {
         "use strict";
 
-        jQuery.validator.addMethod('answercheck', function(value, element) {
+        jQuery.validator.addMethod('answercheck', function (value, element) {
             return this.optional(element) || /^\bcat\b$/.test(value);
         }, "type the correct answer -_-");
 
-        $(function() {
+        $(function () {
             $('#contactForm').validate({
                 // Custom error styling
                 errorElement: 'small',
                 errorClass: 'custom-error',
-                errorPlacement: function(error, element) {
+                errorPlacement: function (error, element) {
                     error.css('color', '#ff5e14');
                     error.insertAfter(element);
                 },
@@ -58,7 +58,7 @@ $(document).ready(function() {
                         minlength: "Your message should be at least 10 characters long."
                     }
                 },
-                submitHandler: function(form) {
+                submitHandler: function (form) {
                     const $submitBtn = $('#submitBtn');
                     $submitBtn.prop('disabled', true).html('Sending... <i class="fa fa-spinner fa-spin ml-2"></i>');
 
@@ -74,25 +74,25 @@ $(document).ready(function() {
 
                     // Send via EmailJS
                     emailjs.send(
-                        "service_0s4fxtx",
-                        "template_ivmzmx6",
+                        "service_of85deu",
+                        "template_xt9fjoe",
                         data
-                    ).then(function() {
+                    ).then(function () {
                         // Construct WhatsApp message
-                        const whatsappMessage = 
-`*New Website Enquiry*
+                        const whatsappMessage =
+                            `*New Website Enquiry*
 
-Name: ${data.name}
-Phone: ${data.phone}
-Email: ${data.email}
+                            Name: ${data.name}
+                            Phone: ${data.phone}
+                            Email: ${data.email}
 
-Subject:
-${data.subject}
+                            Subject:
+                            ${data.subject}
 
-Message:
-${data.message}
+                            Message:
+                            ${data.message}
 
-Time: ${data.time}`;
+                            Time: ${data.time}`;
 
                         // Open WhatsApp window
                         window.open(
@@ -101,7 +101,7 @@ Time: ${data.time}`;
                         );
 
                         // Hide Form & Show Thank You Card
-                        $('#contactForm').fadeOut(400, function() {
+                        $('#contactForm').fadeOut(400, function () {
                             $('#formSuccess').fadeIn(400);
                         });
 
@@ -109,7 +109,7 @@ Time: ${data.time}`;
                         let timeLeft = 6;
                         $('#countdown').text(timeLeft);
 
-                        const timerInterval = setInterval(function() {
+                        const timerInterval = setInterval(function () {
                             timeLeft--;
                             $('#countdown').text(timeLeft);
 
@@ -117,7 +117,7 @@ Time: ${data.time}`;
                                 clearInterval(timerInterval);
 
                                 // Reset states and restore Form
-                                $('#formSuccess').fadeOut(400, function() {
+                                $('#formSuccess').fadeOut(400, function () {
                                     form.reset();
                                     $submitBtn.prop('disabled', false).html('Send Message <i class="fa fa-paper-plane ml-2"></i>');
                                     $('#contactForm').fadeIn(400);
@@ -125,7 +125,7 @@ Time: ${data.time}`;
                             }
                         }, 1000);
 
-                    }).catch(function(err) {
+                    }).catch(function (err) {
                         alert("Unable to send message. Please try again later.");
                         console.error("EmailJS Error:", err);
                         $submitBtn.prop('disabled', false).html('Send Message <i class="fa fa-paper-plane ml-2"></i>');
